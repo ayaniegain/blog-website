@@ -1,0 +1,30 @@
+.hero{
+    height: 400px;
+    background: rgb(10,41,47);
+background: linear-gradient(0deg, rgba(10,41,47,1) 0%, rgba(3,19,31,1) 100%);display:  flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.first-section{
+    word-break: break-all;
+    width: 380px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+.second-section{
+    height: 200px;
+
+}
+.second-section span{
+    font-size: 100px;
+  background: -webkit-linear-gradient(left,#22c350, #2d4afd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+}
+
