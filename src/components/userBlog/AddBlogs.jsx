@@ -19,6 +19,14 @@ function AddBlogs() {
     setGenre(event.target.value);
   };
 
+  const handleImages=(e)=>{
+
+    const file=e.target.files[0]
+    setImage(file)
+    console.log(file);
+
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -45,7 +53,15 @@ function AddBlogs() {
         details,
         genre,
       });
-      navigate("/");
+
+      blogsData.push({
+        author,
+        title,
+        image:URL.createObjectURL(image),
+        details,
+        genre,
+      })
+      navigate("/dashboard");
       // toast("New User Created");
     }
   };
@@ -56,7 +72,7 @@ function AddBlogs() {
       <div className="h-screen">
       <section className=" flex justify-around py-4 border-b border-gray-400 ">
         <div className="nav-head">
-          <span className="text-xl"> ➡️ Add blog</span>
+          <span className="text-xl"> ♾️ Add blog</span>
         </div>
         <div className="nav-btn">
           <button className="bg-green-800 text-white px-4 py-2 rounded-md">
@@ -99,61 +115,55 @@ function AddBlogs() {
               required
             />
           </div>
-          <div className="input-group-inline">
-            <label className="labelHeading" htmlFor="phone">
-              set Image
-            </label>
-            <input
-              className="inputValue"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
-              type="file"
-              name="image"
-              id="image"
-              placeholder="select Image"
-              required
-            />
-          </div>
+       
           <div className="input-group-inline">
             <label className="labelHeading" htmlFor="altphone">
               Details
             </label>
-            <input
+            <textarea
+            rows={4} cols={50}
               className="inputValue"
               value={details}
               onChange={(e) => setDetails(e.target.value)}
-              type="text"
+              type='text'
               name="details"
               id="details"
               placeholder="Add Details"
               required
             />
           </div>
-          {/* <div className="input-group-inline">
-            <label  className="labelHeading" htmlFor="email">Email Address</label>
-            <input
-            className="inputValue"
-
-              value={email}
-              onChange={(e) => setemail(e.target.value)}
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email Address"
-              required
-            />
-          </div> */}
+          
+         
           <div className="input-group-inline">
             <label className="labelHeading">Select an option:</label>
-            <select value={genre} onChange={handleChange}>
+            <select 
+              className="inputValue w-20"
+            
+            value={genre} onChange={handleChange}>
               <option value="">Select...</option>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
+              <option value="Health">Health</option>
+              <option value="Marketing">Marketing </option>
+              <option value="Technology">Technology</option>
             </select>
-            {genre && <p>You selected: {genre}</p>}
+            {genre && <p className="mx-6 text-green-500">You have selected: <span className="font-bold">{genre}</span></p>}
           </div>
         </div>
+        <div className="input-group-inline flex  align-middle ">
+
+          <div>
+
+            <label className="labelHeading" htmlFor="phone">
+              Set Image
+            </label>
+            <input
+              onChange={handleImages}
+              type="file"
+              placeholder="select Image"
+              required
+              />
+              </div>
+            {image?<img className="h-20 mx-4 " src={URL.createObjectURL(image)}/> :''} 
+          </div>
 
         <div className="button-section">
           <button type="submit" className="add-button">

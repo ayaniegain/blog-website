@@ -26,7 +26,7 @@ function EditBlog() {
     if (blog) {
       setAuthor(blog.author);
       setTitle(blog.title);
-      // setImage(blog.image);
+      setImage(blog.image);
       setDetails(blog.details);
       setGenre(blog.setGenre);
     }
@@ -76,7 +76,7 @@ function EditBlog() {
 
       <section className=" flex justify-around py-4 border-b border-gray-400 ">
         <div className="nav-head">
-          <span className="text-xl"> ➡️ Edit blog</span>
+          <span className="text-xl"> ♾️ Edit blog</span>
         </div>
         <div className="nav-btn">
           <button className="bg-green-800 text-white px-4 py-2 rounded-md">

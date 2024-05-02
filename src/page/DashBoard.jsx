@@ -4,7 +4,7 @@ import { blogsData } from "../data/useData";
 
 import "../components/style/Dashboard.css";
 
-// console.log(blogsData);
+console.log(blogsData);
 function DashBoard() {
   const [blogs, setBlogs] = useState(blogsData);
 
@@ -24,7 +24,7 @@ function DashBoard() {
     <div className="h-screen">
       <section className=" flex justify-around py-4 border-b border-gray-300">
         <div className="nav-head">
-          <span className="text-xl"> ➡️ View all blog</span>
+          <span className="text-xl"> ♾️ View all blog</span>
         </div>
         <div className="nav-btn">
           <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
