@@ -23,7 +23,6 @@ function AddBlogs() {
 
     const file=e.target.files[0]
     setImage(file)
-    console.log(file);
 
   }
 
@@ -57,7 +56,7 @@ function AddBlogs() {
       blogsData.push({
         author,
         title,
-        image:URL.createObjectURL(image),
+        image,
         details,
         genre,
       })
@@ -137,7 +136,7 @@ function AddBlogs() {
           <div className="input-group-inline">
             <label className="labelHeading">Select an option:</label>
             <select 
-              className="inputValue w-20"
+              className="inputValue w-[120px]"
             
             value={genre} onChange={handleChange}>
               <option value="">Select...</option>

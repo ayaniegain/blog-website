@@ -4,7 +4,7 @@ import { blogsData } from "../data/useData";
 
 import "../components/style/Dashboard.css";
 
-console.log(blogsData);
+// console.log(blogsData);
 function DashBoard() {
   const [blogs, setBlogs] = useState(blogsData);
 
