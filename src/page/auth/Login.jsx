@@ -40,7 +40,7 @@ const Login = () => {
       //   console.error('Login failed:', error.response.data.message);
       // }
       console.log(createBlog);
-      navigate('/dashboard')
+      navigate('/protected/dashboard')
 
       clearData();
     }

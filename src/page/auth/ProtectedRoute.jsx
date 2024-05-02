@@ -1,22 +1,18 @@
 import React, { useEffect } from "react";
-import Layout from "../../components/Layout";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
-function ProtectedRoute({ DashBoard }) {
+function ProtectedRoute() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let login = true;
-    if (!login) {
+    const isLoggedIn = false;
+
+    if (!isLoggedIn) {
       navigate("/login");
     }
-  }, []);
+  }, [navigate]);
 
-  return (
-    <Layout>
-        <DashBoard />
-    </Layout>
-  );
+  return <Outlet />;
 }
 
 export default ProtectedRoute;

@@ -75,7 +75,7 @@ console.log(blog);
       // });
 
      
-      navigate("/dashboard");
+      navigate("/protected/dashboard");
       // toast("New User Created");
     }
   };
@@ -91,7 +91,7 @@ console.log(blog);
       </div>
       <div className="nav-btn">
         <button className="bg-green-800 text-white px-4 py-2 rounded-md">
-          <NavLink to={"/dashboard"} className="btn">
+          <NavLink to={"/protected/dashboard"} className="btn">
             View All Blog
           </NavLink>
         </button>

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { blogsData } from "../data/useData";
 
 import "../components/style/Dashboard.css";
+import Layout from "../components/Layout";
 
 // console.log(blogsData);
 function DashBoard() {
@@ -21,6 +22,7 @@ function DashBoard() {
   };
 
   return (
+    <Layout>
     <div className="h-screen">
       <section className=" flex justify-around py-4 border-b border-gray-300">
         <div className="nav-head">
@@ -28,7 +30,7 @@ function DashBoard() {
         </div>
         <div className="nav-btn">
           <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-            <NavLink to={"/addblog"} className="btn">
+            <NavLink to={"/protected/addblog"} className="btn">
               Add Blog
             </NavLink>
           </button>
@@ -85,7 +87,7 @@ function DashBoard() {
                         Delete
                       </button>
                       <button className="second-btn">
-                        <NavLink className="btn" to={`/editblog/${blog.id}`}>
+                        <NavLink className="btn" to={`/protected/editblog/${blog.id}`}>
                           Edit
                         </NavLink>
                       </button>
@@ -98,6 +100,7 @@ function DashBoard() {
         )}
       </section>
     </div>
+    </Layout>
   );
 }
 
