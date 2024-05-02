@@ -12,7 +12,7 @@ function BlogDetails() {
 
   return (
     <Layout>
-      <div>
+      <div className="h-screen">
         <h2>{title}</h2>
         <p>{author}</p>
         <p>{details}</p>

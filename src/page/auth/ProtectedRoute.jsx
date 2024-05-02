@@ -1,28 +1,22 @@
-import React, { useEffect } from 'react'
-import Layout from '../../components/Layout'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect } from "react";
+import Layout from "../../components/Layout";
+import { useNavigate } from "react-router-dom";
 
-function ProtectedRoute({DashBoard}) {
-  const navigate=useNavigate()
+function ProtectedRoute({ DashBoard }) {
+  const navigate = useNavigate();
 
   useEffect(() => {
-    let login=false
+    let login = true;
     if (!login) {
-   
-    navigate('/login')
-    
-  }
-    
-  }, [])
+      navigate("/login");
+    }
+  }, []);
 
-
-    
- 
   return (
- <Layout>
- <DashBoard/>
- </Layout>
-  )
+    <Layout>
+        <DashBoard />
+    </Layout>
+  );
 }
 
-export default ProtectedRoute
+export default ProtectedRoute;

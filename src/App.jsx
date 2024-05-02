@@ -10,6 +10,8 @@ import NoPageFound from "./page/NoPageFound";
 import ProtectedRoute from "./page/auth/ProtectedRoute";
 import BlogDetails from "./components/BlogDetails";
 import Login from "./page/auth/Login";
+import AddBlogs from "./components/userBlog/AddBlogs";
+import EditBlog from "./components/userBlog/EditBlog";
 
 function App() {
   return (
@@ -21,7 +23,11 @@ function App() {
         <Route path="/blogdetails/:blogId" element={<BlogDetails />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={ < ProtectedRoute DashBoard={DashBoard} />} />
+        {/* <Route path="/dashboard" element={ < ProtectedRoute AddBlogs={AddBlogs} />} /> */}
+
+        <Route path="/addblog" element={<AddBlogs/>} />
         <Route path="*" element={<NoPageFound />} />
+        <Route path="/editblog/:blogId" element={<EditBlog/>} />
       </Routes>
     </>
   );
