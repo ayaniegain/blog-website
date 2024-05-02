@@ -1,0 +1,54 @@
+
+/* //add customer design css */
+
+
+
+.form-container {
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .form-section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .input-group-inline {
+    flex: 0 0 calc(50% - 10px);
+    margin: 0 10px 20px 0;
+  }
+  
+  .labelHeading {
+    display: inline-block;
+    font-weight: bold;
+    margin: 15px;
+  }
+  
+  .inputValue {
+    width: calc(50% - 10px);
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+  }
+  
+  .button-section {
+    text-align: center;
+  }
+  
+  .add-button {
+    background-color: rgb(57, 158, 57);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 150px;
+  }
+  
+  .add-button:hover {
+    background-color: #65cb69;
+  }
+  

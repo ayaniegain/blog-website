@@ -1,126 +1,168 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { blogsData } from "../../data/useData";
 // import { toast } from "react-toastify";
-
+import "./InputFieldPage.css";
+import Layout from "../Layout";
 
 function AddBlogs() {
   const navigate = useNavigate();
 
-  const [fname, setfname] = useState("");
-  const [lname, setlname] = useState("");
-  const [phone, setphone] = useState("");
-  const [altphone, setaltphone] = useState("");
-  const [email, setemail] = useState("");
+  const [author, setAuthor] = useState("");
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [details, setDetails] = useState("");
+  const [genre, setGenre] = useState("");
+
+  const handleChange = (event) => {
+    setGenre(event.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (
-      fname !== "" &&
-      lname !== "" &&
-      phone !== "" &&
-      altphone !== "" &&
-      email !== ""
+      author !== "" &&
+      title !== "" &&
+      image !== "" &&
+      details !== "" &&
+      genre !== ""
     ) {
-      let newUser = await axios.post("http://localhost:8000/api/v1/user/", {
-        firstname: fname,
-        lastname: lname,
-        phone,
-        alternativeno: altphone,
-        email,
+      // let newBlog = await axios.post("http://localhost:8000/api/v1/blog/", {
+      //   author,
+      //   title,
+      //   image,
+      //   details,
+      //   genre,
+      // });
+
+      // dispatch(createUser(newBlog.data.blog));
+      console.log({
+        author,
+        title,
+        image,
+        details,
+        genre,
       });
-
-      dispatch(createUser(newUser.data.user));
-
       navigate("/");
-      toast("New User Created");
+      // toast("New User Created");
     }
   };
 
   return (
-    <></>
-    // <div>
-    //   {/* <CommonNavButton
-    //     linkText="/"
-    //     pageName="Create Customer"
-    //     btnText="view All Customer"
-    //   /> */}
-    //   <div className="add-customer">
-    //     <span>Add Customer</span>
-    //   </div>
+    <Layout>
 
-    //   <form onSubmit={handleSubmit} className="form-container">
-    //     <div className="form-section">
-    //       <div className="input-group-inline">
-    //         <label htmlFor="fname">First Name</label>
-    //         <input
-    //           value={fname}
-    //           onChange={(e) => setfname(e.target.value)}
-    //           type="text"
-    //           name="fname"
-    //           id="fname"
-    //           placeholder="First Name"
-    //           required
-    //         />
-    //       </div>
-    //       <div className="input-group-inline">
-    //         <label htmlFor="lname">Last Name</label>
-    //         <input
-    //           value={lname}
-    //           onChange={(e) => setlname(e.target.value)}
-    //           type="text"
-    //           name="lname"
-    //           id="lname"
-    //           placeholder="Last Name"
-    //           required
-    //         />
-    //       </div>
-    //       <div className="input-group-inline">
-    //         <label htmlFor="phone">Primary Mobile Number</label>
-    //         <input
-    //           value={phone}
-    //           onChange={(e) => setphone(e.target.value)}
-    //           type="number"
-    //           name="phone"
-    //           id="phone"
-    //           placeholder="Primary Mobile Number"
-    //           required
-    //         />
-    //       </div>
-    //       <div className="input-group-inline">
-    //         <label htmlFor="altphone">Alternative Mobile Number</label>
-    //         <input
-    //           value={altphone}
-    //           onChange={(e) => setaltphone(e.target.value)}
-    //           type="number"
-    //           name="altphone"
-    //           id="altphone"
-    //           placeholder="Alternative Mobile Number"
-    //           required
-    //         />
-    //       </div>
-    //       <div className="input-group-inline">
-    //         <label htmlFor="email">Email Address</label>
-    //         <input
-    //           value={email}
-    //           onChange={(e) => setemail(e.target.value)}
-    //           type="email"
-    //           name="email"
-    //           id="email"
-    //           placeholder="Email Address"
-    //           required
-    //         />
-    //       </div>
-    //     </div>
+      <div className="h-screen">
+      <section className=" flex justify-around py-4 border-b border-gray-400 ">
+        <div className="nav-head">
+          <span className="text-xl"> ➡️ Add blog</span>
+        </div>
+        <div className="nav-btn">
+          <button className="bg-green-800 text-white px-4 py-2 rounded-md">
+            <NavLink to={"/dashboard"} className="btn">
+              View All Blog
+            </NavLink>
+          </button>
+        </div>
+      </section>
 
-    //     <div className="button-section">
-    //       <button type="submit" className="add-button">
-    //         ADD
-    //       </button>
-    //     </div>
-    //   </form>
-    // </div>
+      <form onSubmit={handleSubmit} className="form-container">
+        <div className="form-section">
+          <div className="input-group-inline">
+            <label className="labelHeading" htmlFor="fname">
+              Author
+            </label>
+            <input
+              className="inputValue"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+              type="text"
+              name="author"
+              id="author"
+              placeholder="Author Name"
+              required
+            />
+          </div>
+          <div className="input-group-inline">
+            <label className="labelHeading" htmlFor="lname">
+              Title
+            </label>
+            <input
+              className="inputValue"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Title Name"
+              required
+            />
+          </div>
+          <div className="input-group-inline">
+            <label className="labelHeading" htmlFor="phone">
+              set Image
+            </label>
+            <input
+              className="inputValue"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+              type="file"
+              name="image"
+              id="image"
+              placeholder="select Image"
+              required
+            />
+          </div>
+          <div className="input-group-inline">
+            <label className="labelHeading" htmlFor="altphone">
+              Details
+            </label>
+            <input
+              className="inputValue"
+              value={details}
+              onChange={(e) => setDetails(e.target.value)}
+              type="text"
+              name="details"
+              id="details"
+              placeholder="Add Details"
+              required
+            />
+          </div>
+          {/* <div className="input-group-inline">
+            <label  className="labelHeading" htmlFor="email">Email Address</label>
+            <input
+            className="inputValue"
+
+              value={email}
+              onChange={(e) => setemail(e.target.value)}
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email Address"
+              required
+            />
+          </div> */}
+          <div className="input-group-inline">
+            <label className="labelHeading">Select an option:</label>
+            <select value={genre} onChange={handleChange}>
+              <option value="">Select...</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+            {genre && <p>You selected: {genre}</p>}
+          </div>
+        </div>
+
+        <div className="button-section">
+          <button type="submit" className="add-button">
+            ADD
+          </button>
+        </div>
+      </form>
+      </div>
+    </Layout>
   );
 }
 

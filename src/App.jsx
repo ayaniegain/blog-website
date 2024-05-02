@@ -26,8 +26,8 @@ function App() {
         {/* <Route path="/dashboard" element={ < ProtectedRoute AddBlogs={AddBlogs} />} /> */}
 
         <Route path="/addblog" element={<AddBlogs/>} />
-        <Route path="*" element={<NoPageFound />} />
         <Route path="/editblog/:blogId" element={<EditBlog/>} />
+        <Route path="*" element={<NoPageFound />} />
       </Routes>
     </>
   );

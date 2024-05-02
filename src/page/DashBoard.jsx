@@ -22,7 +22,7 @@ function DashBoard() {
 
   return (
     <div className="h-screen">
-      <section className=" flex justify-around py-4">
+      <section className=" flex justify-around py-4 border-b border-gray-300">
         <div className="nav-head">
           <span className="text-xl"> ➡️ View all blog</span>
         </div>
