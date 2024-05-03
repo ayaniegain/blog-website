@@ -23,7 +23,7 @@ function DashBoard() {
 
   return (
     <Layout>
-    <div className="h-screen">
+    <div>
       <section className=" flex justify-around py-4 border-b border-gray-300">
         <div className="nav-head">
           <span className="text-xl"> ♾️ View all blog</span>
@@ -37,7 +37,7 @@ function DashBoard() {
         </div>
       </section>
 
-      <section>
+      <section className="overflow-x-scroll">
         {blogsData == [] ? (
           <div className="no-customer">
             <h4>No blog found </h4>

@@ -22,7 +22,6 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/blogdetails/:blogId" element={<BlogDetails />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/dashboard" element={ < ProtectedRoute DashBoard={DashBoard} />} /> */}
         <Route path="/protected" element={<ProtectedRoute />}>
           <Route path="dashboard" element={<DashBoard />} />
           <Route path="addblog" element={<AddBlogs />} />

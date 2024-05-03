@@ -27,11 +27,11 @@ function MostView() {
                 View
               </Link>
             </div>
-          </div>
+            </div>
         ))}
       </div>
 
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center pb-6">
         <button className="bg-blue-500 text-white px-4 py-2 rounded">Read more</button>
     </div>
     </div>

@@ -83,7 +83,7 @@ function AddBlogs() {
       </section>
 
       <form onSubmit={handleSubmit} className="form-container">
-        <div className="form-section">
+        <div className="form-section  ">
           <div className="input-group-inline">
             <label className="labelHeading" htmlFor="fname">
               Author
