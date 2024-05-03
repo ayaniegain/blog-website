@@ -5,7 +5,7 @@ function ProtectedRoute() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const isLoggedIn = false;
+    const isLoggedIn = true;
 
     if (!isLoggedIn) {
       navigate("/login");
