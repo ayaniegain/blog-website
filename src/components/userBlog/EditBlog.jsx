@@ -20,8 +20,7 @@ function EditBlog() {
 
   useEffect(() => {
     const blog = blogsData.find((u) => u.id ==Number(blogId));
-console.log(blogsData);
-console.log(blog);
+
     
     if (blog) {
       setAuthor(blog.author);
@@ -84,7 +83,7 @@ console.log(blog);
   return (
     <Layout>
 
-    <div className="h-screen">
+    <div className="md:h-screen">
     <section className=" flex justify-around py-4 border-b border-gray-400 ">
       <div className="nav-head">
         <span className="text-xl"> ♾️ Update blog</span>
@@ -159,6 +158,7 @@ console.log(blog);
             <option value="Health">Health</option>
             <option value="Marketing">Marketing </option>
             <option value="Technology">Technology</option>
+            <option value="Technology">Travel</option>
           </select>
           {genre && <p className="mx-6 text-green-500">You have selected: <span className="font-bold">{genre}</span></p>}
         </div>
@@ -177,8 +177,11 @@ console.log(blog);
             required
             />
             </div>
-          {image?<img className="h-20 mx-4 " src={URL.createObjectURL(image)}/> :''} 
         </div>
+        <div >
+            {image?<img className="md:h-20  " src={URL.createObjectURL(image)}/> :''} 
+
+          </div>
 
       <div className="button-section">
         <button type="submit" className="add-button">

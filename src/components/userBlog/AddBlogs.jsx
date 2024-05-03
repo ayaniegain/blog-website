@@ -68,7 +68,7 @@ function AddBlogs() {
   return (
     <Layout>
 
-      <div className="h-screen">
+      <div className="md:h-screen">
       <section className=" flex justify-around py-4 border-b border-gray-400 ">
         <div className="nav-head">
           <span className="text-xl"> ♾️ Add blog</span>
@@ -161,7 +161,11 @@ function AddBlogs() {
               required
               />
               </div>
-            {image?<img className="h-20 mx-4 " src={URL.createObjectURL(image)}/> :''} 
+
+          </div>
+          <div >
+            {image?<img className="md:h-20  " src={URL.createObjectURL(image)}/> :''} 
+
           </div>
 
         <div className="button-section">
