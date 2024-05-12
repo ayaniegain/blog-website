@@ -33,7 +33,7 @@ function Blog({ filteredData }) {
                 alt={item.title}
                 className="md:w-1/3 w-full h-48 object-cover rounded-lg mr-6"
               />
-              <div className="flex flex-col justify-between my-4">
+              <div className="flex flex-col gap-4 justify-between my-4">
                 <div>
                   <h2 className="text-white text-lg font-bold mb-2">
                     {item.title}

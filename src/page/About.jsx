@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 function About() {
   return (
     <Layout>
+      <div className='mx-[120px]'>
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-800 mb-8">About Us</h1>
       <p className="text-lg text-gray-700 mb-8">
@@ -48,6 +49,7 @@ function About() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   </Layout>
   )
